@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services - Unitedflix</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <i class="fas fa-broom"></i> Unitedflix
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-contact">
+        <a href="tel:254712825622"><i class="fas fa-phone"></i> 254 712 825622</a>
+        <a href="https://wa.me/254712825622" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="services-page">
+    <div class="container">
+      <h1>Our Services</h1>
+      <p class="section-subtitle">Complete facility management and cleaning solutions tailored to your needs</p>
+      
+      <div class="services-grid" id="servicesGrid">
+        <!-- Services will be loaded by JavaScript -->
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <h3><i class="fas fa-broom"></i> Unitedflix</h3>
+          <p>Your trusted partner for comprehensive cleaning and facility management services.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Info</h4>
+          <p><i class="fas fa-phone"></i> 254 712 825622</p>
+          <p><i class="fab fa-whatsapp"></i> 254 712 825622</p>
+          
+          <div class="footer-inquiry">
+            <h4>Quick Inquiry</h4>
+            <form id="footerInquiryForm">
+              <input type="text" id="footerName" placeholder="Your Name" required>
+              <input type="text" id="footerPhone" placeholder="Phone Number" required>
+              <textarea id="footerMessage" rows="2" placeholder="Service needed..."></textarea>
+              <button type="submit"><i class="fab fa-whatsapp"></i> Send via WhatsApp</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Unitedflix. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const services = [
+      { title: "Façade Cleaning & Painting", desc: "Professional exterior cleaning, pressure washing, and protective painting for buildings of all heights.", img: "https://images.pexels.com/photos/221027/pexels-photo-221027.jpeg?auto=compress&cs=tinysrgb&w=400" },
+      { title: "Post Construction/Renovation Cleaning", desc: "Thorough debris removal, fine dust extraction, and complete sanitization after construction projects.", img: "https://images.pexels.com/photos/3990359/pexels-photo-3990359.jpeg?auto=compress&cs=tinysrgb&w=400" },
+      { title: "Aircraft Detailed Cleaning", desc: "Interior and exterior aircraft detailing with aviation-approved products and techniques.", img: "https://images.pexels.com/photos/46148/aircraft-jet-landing-cloud-46148.jpeg?auto=compress&cs=tinysrgb&w=400" },
+      { title: "Domestic Floor Sanding", desc: "Expert wood floor restoration, sanding, and refinishing for beautiful, long-lasting results.", img: "https://images.pexels.com/photos/5974339/pexels-photo-5974339.jpeg?auto=compress&cs=tinysrgb&w=400" },
+      { title: "HVAC Systems", desc: "Comprehensive cleaning, maintenance, and repair of heating, ventilation, and air conditioning systems.", img: "https://images.pexels.com/photos/9799991/pexels-photo-9799991.jpeg?auto=compress&cs=tinysrgb&w=400" },
+      { title: "Electrical Systems", desc: "Safe electrical inspection, cleaning, and minor repair services for residential and commercial properties.", img: "https://images.pexels.com/photos/3593986/pexels-photo-3593986.jpeg?auto=compress&cs=tinysrgb&w=400" },
+      { title: "Plumbing Services", desc: "Leak detection, drain cleaning, and comprehensive plumbing maintenance and repairs.", img: "https://images.pexels.com/photos/4239031/pexels-photo-4239031.jpeg?auto=compress&cs=tinysrgb&w=400" },
+      { title: "Chimney Cleaning", desc: "Professional soot removal, inspection, and chimney safety maintenance services.", img: "https://images.pexels.com/photos/7550/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=400" },
+      { title: "Elevators & Escalators", desc: "Deep cleaning and sanitization of elevator cabins, escalators, and moving walkways.", img: "https://images.pexels.com/photos/4480513/pexels-photo-4480513.jpeg?auto=compress&cs=tinysrgb&w=400" },
+      { title: "Fire Safety Systems", desc: "Inspection, cleaning, and maintenance of fire alarms, sprinklers, and extinguishers.", img: "https://images.pexels.com/photos/53499/pexels-photo-53499.jpeg?auto=compress&cs=tinysrgb&w=400" },
+      { title: "General Maintenance & Repairs", desc: "On-call handyman services for all property maintenance and repair needs.", img: "https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg?auto=compress&cs=tinysrgb&w=400" },
+      { title: "Commercial Property Cleaning", desc: "Daily janitorial and deep cleaning services for offices, retail spaces, and commercial buildings.", img: "https://images.pexels.com/photos/4341639/pexels-photo-4341639.jpeg?auto=compress&cs=tinysrgb&w=400" },
+      { title: "Event Cleanup", desc: "Pre-event preparation and post-event waste removal and cleaning services.", img: "https://images.pexels.com/photos/9492897/pexels-photo-9492897.jpeg?auto=compress&cs=tinysrgb&w=400" },
+      { title: "Executive Office Cleaning", desc: "Premium, discreet cleaning services for executive suites and corporate offices.", img: "https://images.pexels.com/photos/7363736/pexels-photo-7363736.jpeg?auto=compress&cs=tinysrgb&w=400" },
+      { title: "Garbage & Waste Management", desc: "Efficient collection, segregation, and eco-friendly waste disposal solutions.", img: "https://images.pexels.com/photos/8022210/pexels-photo-8022210.jpeg?auto=compress&cs=tinysrgb&w=400" },
+      { title: "Sanitary & Washroom Solutions", desc: "Hygiene products supply, deep cleaning, and odor control for washrooms.", img: "https://images.pexels.com/photos/6628778/pexels-photo-6628778.jpeg?auto=compress&cs=tinysrgb&w=400" },
+      { title: "Support Services", desc: "Tailored facility support staff and concierge cleaning for businesses.", img: "https://images.pexels.com/photos/7551622/pexels-photo-7551622.jpeg?auto=compress&cs=tinysrgb&w=400" },
+      { title: "Fumigation & Pest Control", desc: "Safe, effective pest eradication for residential and commercial properties.", img: "https://images.pexels.com/photos/4610496/pexels-photo-4610496.jpeg?auto=compress&cs=tinysrgb&w=400" },
+      { title: "Domestic Gardening & Landscaping", desc: "Complete lawn care, hedge trimming, garden design, and landscape maintenance.", img: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=400" },
+      { title: "Home Spring Cleaning", desc: "Thorough seasonal deep cleaning for your entire home from top to bottom.", img: "https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg?auto=compress&cs=tinysrgb&w=400" },
+      { title: "Domestic Swimming Pool Cleaning", desc: "Regular pool maintenance, chemical balancing, and deep cleaning services.", img: "https://images.pexels.com/photos/261403/pexels-photo-261403.jpeg?auto=compress&cs=tinysrgb&w=400" }
+    ];
+
+    function renderServices() {
+      const grid = document.getElementById('servicesGrid');
+      grid.innerHTML = services.map(service => `
+        <div class="service-card">
+          <img src="${service.img}" alt="${service.title}" onerror="this.src='https://images.pexels.com/photos/48889/cleaning-window-wash-clean-48889.jpeg?auto=compress&cs=tinysrgb&w=400'">
+          <div class="card-content">
+            <h3>${service.title}</h3>
+            <p>${service.desc}</p>
+            <a href="service-detail.html?service=${encodeURIComponent(service.title)}" class="btn btn-primary btn-sm">See More</a>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    renderServices();
+
+    // Footer WhatsApp form
+    document.getElementById('footerInquiryForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('footerName').value;
+      const phone = document.getElementById('footerPhone').value;
+      const message = document.getElementById('footerMessage').value;
+      const text = `Hello Unitedflix, I'm ${name}. Phone: ${phone}. Message: ${message || 'I need your services'}`;
+      window.open(`https://wa.me/254712825622?text=${encodeURIComponent(text)}`, '_blank');
+    });
+
+    // Hamburger Menu Toggle
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navLinks = document.querySelector('.nav-links');
+    const headerContact = document.querySelector('.header-contact');
+
+    if (hamburgerBtn) {
+      hamburgerBtn.addEventListener('click', function() {
+        hamburgerBtn.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        headerContact.classList.toggle('active');
+      });
+
+      // Close menu when a link is clicked
+      const allLinks = document.querySelectorAll('.nav-links a, .header-contact a');
+      allLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          hamburgerBtn.classList.remove('active');
+          navLinks.classList.remove('active');
+          headerContact.classList.remove('active');
+        });
+      });
+    }
+  </script>
+</body>
+</html>

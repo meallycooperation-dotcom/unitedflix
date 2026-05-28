@@ -23,6 +23,10 @@
         <a href="tel:0112224991"><i class="fas fa-phone"></i> 0112224991</a>
         <a href="https://wa.me/0112224991" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
       </div>
+      <div class="header-actions">
+        <a href="tel:0112224991" aria-label="Call us"><i class="fas fa-phone"></i></a>
+        <a href="https://wa.me/0112224991" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
       <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
         <span></span>
         <span></span>
@@ -85,28 +89,150 @@
     const serviceName = urlParams.get('service');
     
     const services = [
-      { title: "Façade Cleaning & Painting", img: "https://karkeit.com/wp-content/uploads/2023/06/Facade-Cleaning-Services-e1687521081195.jpg", desc: "Our façade cleaning and painting service restores the exterior appearance of your building. We use specialized equipment for high-rise access and environmentally friendly cleaning solutions. Services include pressure washing, graffiti removal, protective coating application, and full exterior painting." },
-      { title: "Post Construction/Renovation Cleaning", img: "https://images.pexels.com/photos/3990359/pexels-photo-3990359.jpeg?auto=compress&cs=tinysrgb&w=400", desc: "After construction or renovation, your space needs thorough cleaning to remove dust, debris, and construction residue. Our team handles everything from window cleaning to floor scrubbing, ensuring your space is move-in ready." },
-      { title: "Aircraft Detailed Cleaning", img: "https://lirp.cdn-website.com/992baaff/dms3rep/multi/opt/what-is-aircraft-detailing-1920w.jpg", desc: "Interior and exterior aircraft detailing with aviation-approved products and techniques." },
-      { title: "HVAC Systems", img: "https://5.imimg.com/data5/SELLER/Default/2022/6/GI/EJ/YJ/1766884/clean-room-hvac-system-500x500.jpeg", desc: "Comprehensive cleaning, maintenance, and repair of heating, ventilation, and air conditioning systems." },
-      { title: "Electrical Systems", img: "https://images.pexels.com/photos/3593986/pexels-photo-3593986.jpeg?auto=compress&cs=tinysrgb&w=400", desc: "Safe electrical inspection, cleaning, and minor repair services for residential and commercial properties." },
-      { title: "Plumbing Services", img: "https://cranestraining.com/images/plumbing.jpg", desc: "Leak detection, drain cleaning, and comprehensive plumbing maintenance and repairs." },
-      { title: "Elevators & Escalators", img: "https://crewcare.co.nz/admin_assets/blog/elevator-and-escalator.jpg", desc: "Deep cleaning and sanitization of elevator cabins, escalators, and moving walkways." },
-      { title: "Fire Safety Systems", img: "https://flammatech.africa/wp-content/uploads/2025/01/Maintain-Fire-Safety-Equipment.jpg", desc: "Inspection, cleaning, and maintenance of fire alarms, sprinklers, and extinguishers." },
-      { title: "General Maintenance & Repairs", img: "https://probuilderskenya.com/wp-content/uploads/2025/11/8427.png", desc: "On-call handyman services for all property maintenance and repair needs." },
-      { title: "Commercial Property Cleaning", img: "https://www.mcsclean.co.uk/wp-content/uploads/2021/06/shutterstock_297554096-1.jpg", desc: "Daily janitorial and deep cleaning services for offices, retail spaces, and commercial buildings." },
-      { title: "Event Cleanup", img: "https://static01.nyt.com/images/2009/01/01/nyregion/01cleanup_600.jpg", desc: "Pre-event preparation and post-event waste removal and cleaning services." },
-      { title: "Executive Office Cleaning", img: "https://bestcarecleaning.co.ke/wp-content/uploads/2024/04/office-Deep-Cleaning-Services-In-Nairobi-768x512.jpg", desc: "Premium, discreet cleaning services for executive suites and corporate offices." },
-      { title: "Sanitary & Washroom Solutions", img: "https://www.cleaningafrica.co.za/wp-content/uploads/2025/03/toilet-bowl-1024x640.jpg", desc: "Hygiene products supply, deep cleaning, and odor control for washrooms." },
-      { title: "Fumigation & Pest Control", img: "https://bestcarepestcontrol.co.ke/wp-content/uploads/2023/11/BESTCARE-PEST-CONTROL-SERVICES.jpg", desc: "Safe, effective pest eradication for residential and commercial properties." },
-      { title: "Domestic Gardening & Landscaping", img: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=400", desc: "Complete lawn care, hedge trimming, garden design, and landscape maintenance." },
-      { title: "Home Spring Cleaning", img: "https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg?auto=compress&cs=tinysrgb&w=400", desc: "Thorough seasonal deep cleaning for your entire home from top to bottom." },
-      { title: "Domestic Swimming Pool Cleaning", img: "https://images.pexels.com/photos/261403/pexels-photo-261403.jpeg?auto=compress&cs=tinysrgb&w=400", desc: "Regular pool maintenance, chemical balancing, and deep cleaning services." }
+      {
+        title: "Façade Cleaning & Painting",
+        img: "https://karkeit.com/wp-content/uploads/2023/06/Facade-Cleaning-Services-e1687521081195.jpg",
+        description: `
+          <p>Our façade cleaning and painting service restores the exterior appearance of your building. We use specialized equipment for high-rise access and environmentally friendly cleaning solutions that remove dirt, soot, and grime without damaging surfaces.</p>
+          <p>From pressure washing and graffiti removal to protective coating application and full exterior painting, we deliver a polished finish that boosts curb appeal and helps protect your structure from weather and pollution.</p>
+        `
+      },
+      {
+        title: "Post Construction/Renovation Cleaning",
+        img: "https://images.pexels.com/photos/3990359/pexels-photo-3990359.jpeg?auto=compress&cs=tinysrgb&w=400",
+        description: `
+          <p>After construction or renovation, your space needs a thorough transitional clean to remove dust, debris, and residue left behind by builders. Our team handles everything from window cleaning and surface dusting to floor scrubbing and drywall dust removal.</p>
+          <p>We make sure the property is move-in ready, with attention to detail on fixtures, plumbing points, door frames, and vents so your newly renovated areas look pristine and welcoming.</p>
+        `
+      },
+      {
+        title: "Aircraft Detailed Cleaning",
+        img: "https://lirp.cdn-website.com/992baaff/dms3rep/multi/opt/what-is-aircraft-detailing-1920w.jpg",
+        description: `
+          <p>Our aircraft detailed cleaning service covers both interior and exterior surfaces with aviation-approved products and techniques. We focus on the cabin, galley, lavatories, and cockpit to ensure a hygienic and comfortable flying environment.</p>
+          <p>Exterior treatments are designed to remove contaminants, improve visibility, and maintain the aircraft's finish, while interior detailing preserves upholstery, carpets, and paneling for a spotless travel experience.</p>
+        `
+      },
+      {
+        title: "HVAC Systems",
+        img: "https://5.imimg.com/data5/SELLER/Default/2022/6/GI/EJ/YJ/1766884/clean-room-hvac-system-500x500.jpeg",
+        description: `
+          <p>Our HVAC systems service provides comprehensive cleaning, maintenance, and repair for heating, ventilation, and air conditioning equipment. Regular service helps maintain air quality, improve efficiency, and reduce energy costs.</p>
+          <p>We inspect filters, ductwork, coils, and fans, clear blockages, and perform preventive maintenance so your environment stays comfortable and safe year-round.</p>
+        `
+      },
+      {
+        title: "Electrical Systems",
+        img: "https://images.pexels.com/photos/3593986/pexels-photo-3593986.jpeg?auto=compress&cs=tinysrgb&w=400",
+        description: `
+          <p>We offer safe electrical inspection, cleaning, and minor repair services for residential and commercial properties. Our technicians evaluate wiring, switchboards, and outlets to reduce fire risks and keep systems operating reliably.</p>
+          <p>Cleaning electrical panels and components helps prevent overheating, while our maintenance checks identify issues early so you can avoid costly downtime.</p>
+        `
+      },
+      {
+        title: "Plumbing Services",
+        img: "https://cranestraining.com/images/plumbing.jpg",
+        description: `
+          <p>Our plumbing service includes leak detection, drain cleaning, pipe maintenance, and repairs across your property. We handle clogged drains, worn fittings, low water pressure, and all common plumbing challenges.</p>
+          <p>With careful diagnostics and reliable fixes, we help keep your water systems flowing smoothly and prevent damage from leaks or blockages before they escalate.</p>
+        `
+      },
+      {
+        title: "Elevators & Escalators",
+        img: "https://crewcare.co.nz/admin_assets/blog/elevator-and-escalator.jpg",
+        description: `
+          <p>Our elevator and escalator service includes deep cleaning and sanitization of cabins, handrails, doors, and moving walkways. We remove grease, fingerprints, and dust buildup to improve hygiene and appearance.</p>
+          <p>Regular maintenance of these systems also helps preserve functionality and passenger comfort, ensuring that your vertical transport operates efficiently and safely.</p>
+        `
+      },
+      {
+        title: "Fire Safety Systems",
+        img: "https://flammatech.africa/wp-content/uploads/2025/01/Maintain-Fire-Safety-Equipment.jpg",
+        description: `
+          <p>Our fire safety service includes inspection, cleaning, and maintenance of alarms, sprinklers, extinguishers, and detection systems. Keeping fire equipment clean and operational is essential for safety and compliance.</p>
+          <p>We also verify that your system is ready to respond quickly if needed, giving you peace of mind that your building is protected around the clock.</p>
+        `
+      },
+      {
+        title: "General Maintenance & Repairs",
+        img: "https://probuilderskenya.com/wp-content/uploads/2025/11/8427.png",
+        description: `
+          <p>Our general maintenance and repair services cover a wide range of property needs, from minor fixes to preventive upkeep. We respond quickly to issues like doors, fixtures, carpentry, and small structural repairs.</p>
+          <p>By keeping your property in good condition, we help protect your investment and reduce the chance of more serious damage from neglected repairs.</p>
+        `
+      },
+      {
+        title: "Commercial Property Cleaning",
+        img: "https://www.mcsclean.co.uk/wp-content/uploads/2021/06/shutterstock_297554096-1.jpg",
+        description: `
+          <p>Our commercial cleaning service provides daily janitorial care and deep cleaning for offices, retail stores, and commercial buildings. We tailor each plan to match your schedule and space requirements.</p>
+          <p>From floor care to waste management and sanitization, we create a clean, healthy working environment that leaves a great impression on clients and employees.</p>
+        `
+      },
+      {
+        title: "Event Cleanup",
+        img: "https://static01.nyt.com/images/2009/01/01/nyregion/01cleanup_600.jpg",
+        description: `
+          <p>We provide complete event cleanup, including pre-event preparation and post-event waste removal. Our crew handles setup cleaning, litter collection, surface sanitization, and disposal of trash and recyclables.</p>
+          <p>Whether you're hosting a small gathering or a large function, we help you leave the venue spotless and ready for the next use.</p>
+        `
+      },
+      {
+        title: "Executive Office Cleaning",
+        img: "https://bestcarecleaning.co.ke/wp-content/uploads/2024/04/office-Deep-Cleaning-Services-In-Nairobi-768x512.jpg",
+        description: `
+          <p>Our executive office cleaning service is premium, discreet, and designed for high-end suites and corporate spaces. We pay special attention to desks, meeting rooms, reception areas, and executive washrooms.</p>
+          <p>We ensure your office looks polished and professional every day, using gentle yet effective cleaning products that preserve furnishings and finishes.</p>
+        `
+      },
+      {
+        title: "Sanitary & Washroom Solutions",
+        img: "https://www.cleaningafrica.co.za/wp-content/uploads/2025/03/toilet-bowl-1024x640.jpg",
+        description: `
+          <p>Our sanitary and washroom solutions include hygiene product supply, deep cleaning, and odor control for restrooms. We clean tiles, fixtures, dispensers, and surfaces to maintain a fresh, sanitary environment.</p>
+          <p>Regular service reduces germ spread and improves comfort for your staff and visitors, keeping washrooms pleasant and safe to use.</p>
+        `
+      },
+      {
+        title: "Fumigation & Pest Control",
+        img: "https://bestcarepestcontrol.co.ke/wp-content/uploads/2023/11/BESTCARE-PEST-CONTROL-SERVICES.jpg",
+        description: `
+          <p>Our fumigation and pest control service targets common insects, rodents, and other pests using safe, effective treatments. We assess the property, identify infestation sources, and apply solutions that protect both people and structures.</p>
+          <p>We follow up with preventive advice and monitoring to help keep pests away long after the initial treatment.</p>
+        `
+      },
+      {
+        title: "Domestic Gardening & Landscaping",
+        img: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=400",
+        description: `
+          <p>Our domestic gardening and landscaping service offers complete lawn care, hedge trimming, garden design, and ongoing landscape maintenance. We help transform outdoor spaces into attractive, easy-to-maintain areas.</p>
+          <p>We also provide seasonal pruning, planting, and irrigation checks so your garden stays healthy and vibrant throughout the year.</p>
+        `
+      },
+      {
+        title: "Home Spring Cleaning",
+        img: "https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg?auto=compress&cs=tinysrgb&w=400",
+        description: `
+          <p>Our home spring cleaning service delivers a deep clean for your entire house, from floors and windows to kitchens and bathrooms. We remove hidden dust, polish surfaces, and refresh every room so your home feels renewed.</p>
+          <p>We focus on hard-to-reach areas and detailed tasks that are easy to overlook, giving your home a thorough reset for the new season.</p>
+        `
+      },
+      {
+        title: "Domestic Swimming Pool Cleaning",
+        img: "https://images.pexels.com/photos/261403/pexels-photo-261403.jpeg?auto=compress&cs=tinysrgb&w=400",
+        description: `
+          <p>Our swimming pool cleaning service handles regular maintenance, chemical balancing, and deep cleaning to keep your pool sparkling. We remove debris, scrub tiles, and ensure your water remains clear and safe.</p>
+          <p>With routine care and expert attention, we help extend the life of your pool equipment and provide an inviting swimming experience every day.</p>
+        `
+      }
     ];
 
     const service = services.find(item => item.title === serviceName) || {
       img: "https://images.pexels.com/photos/48889/cleaning-window-wash-clean-48889.jpeg?auto=compress&cs=tinysrgb&w=600",
-      desc: `Professional ${serviceName || 'cleaning'} services tailored to your specific needs. Contact us for a detailed quote and consultation.`
+      description: `
+        <p>Professional ${serviceName || 'cleaning'} services tailored to your specific needs. Contact us for a detailed quote and consultation, and let us create a custom plan for your property.</p>
+        <p>Our team is ready to support both residential and commercial clients with reliable service, efficient scheduling, and clear communication from start to finish.</p>
+      `
     };
     
     document.getElementById('serviceDetailContent').innerHTML = `
@@ -117,13 +243,13 @@
         <div class="detail-image">
           <img src="${service.img}" alt="${serviceName}">
         </div>
-        <div>
-          <p style="font-size: 1.1rem; line-height: 1.8; color: var(--dark-gray); margin-bottom: 24px;">${service.desc}</p>
-          <a href="https://wa.me/0112224991?text=Hello%20Unitedflix,%20I'm%20interested%20in%20${encodeURIComponent(serviceName || 'your services')}" 
-             class="btn btn-whatsapp" target="_blank">
-            <i class="fab fa-whatsapp"></i> Inquire on WhatsApp
-          </a>
+        <div class="detail-copy" style="font-size: 1.1rem; line-height: 1.8; color: var(--dark-gray); margin-bottom: 24px;">
+          ${service.description || `<p>${service.desc}</p>`}
         </div>
+        <a href="https://wa.me/0112224991?text=Hello%20Unitedflix,%20I'm%20interested%20in%20${encodeURIComponent(serviceName || 'your services')}" 
+           class="btn btn-whatsapp" target="_blank">
+          <i class="fab fa-whatsapp"></i> Inquire on WhatsApp
+        </a>
       </div>
     `;
     

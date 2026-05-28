@@ -143,6 +143,30 @@ header {
   color: var(--secondary-blue);
 }
 
+.header-actions {
+  display: none;
+  gap: 12px;
+  align-items: center;
+}
+
+.header-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--light-blue);
+  color: var(--primary-blue);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.header-actions a:hover {
+  background: var(--secondary-blue);
+  color: #fff;
+}
+
 /* ===== HAMBURGER MENU ===== */
 .hamburger {
   display: none;
@@ -1005,6 +1029,10 @@ footer {
     border-bottom: 2px solid var(--border-color);
     width: 100%;
     box-shadow: var(--shadow-md);
+  }
+
+  .header-actions {
+    display: flex;
   }
   
   h1 { font-size: 2.2rem; }

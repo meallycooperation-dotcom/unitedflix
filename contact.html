@@ -20,8 +20,8 @@
         <a href="contact.html" class="active">Contact</a>
       </nav>
       <div class="header-contact">
-        <a href="tel:254712825622"><i class="fas fa-phone"></i> 254 712 825622</a>
-        <a href="https://wa.me/254712825622" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="tel:0112224991"><i class="fas fa-phone"></i> 0112224991</a>
+        <a href="https://wa.me/0112224991" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
       </div>
       <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
         <span></span>
@@ -53,7 +53,7 @@
             <i class="fab fa-whatsapp"></i>
             <div>
               <h4>WhatsApp</h4>
-              <p><a href="https://wa.me/254712825622" target="_blank" style="color: #25D366; text-decoration: none;">254 712 825622</a></p>
+              <p><a href="https://wa.me/0112224991" target="_blank" style="color: #25D366; text-decoration: none;">0112224991</a></p>
             </div>
           </div>
           
@@ -167,28 +167,25 @@
       const message = document.getElementById('message').value;
       
       const text = `Hello Unitedflix, I'm ${name}. Phone: ${phone}. Email: ${email}. Service: ${service || 'Not specified'}. Message: ${message}`;
-      window.open(`https://wa.me/254712825622?text=${encodeURIComponent(text)}`, '_blank');
+      window.open(`https://wa.me/0112224991?text=${encodeURIComponent(text)}`, '_blank');
     });
 
     // Hamburger Menu Toggle
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const navLinks = document.querySelector('.nav-links');
-    const headerContact = document.querySelector('.header-contact');
 
     if (hamburgerBtn) {
       hamburgerBtn.addEventListener('click', function() {
         hamburgerBtn.classList.toggle('active');
         navLinks.classList.toggle('active');
-        headerContact.classList.toggle('active');
       });
 
       // Close menu when a link is clicked
-      const allLinks = document.querySelectorAll('.nav-links a, .header-contact a');
+      const allLinks = document.querySelectorAll('.nav-links a');
       allLinks.forEach(link => {
         link.addEventListener('click', function() {
           hamburgerBtn.classList.remove('active');
           navLinks.classList.remove('active');
-          headerContact.classList.remove('active');
         });
       });
     }
